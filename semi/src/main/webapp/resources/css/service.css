@@ -1,0 +1,129 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+}
+
+.content {
+	width: 80%;
+	padding: 20px;
+}
+
+.inquiry {
+	margin-top: 20px;
+}
+
+.inquiry h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.faq, .inquiry {
+	margin-top: 20px;
+}
+
+.faq h2, .inquiry h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.write-button {
+	margin-bottom: 10px;
+	text-align: right;
+}
+
+.write-button a {
+	display: inline-block;
+	padding: 8px 12px;
+	background-color: #4A47A3;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table th, table td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: center;
+}
+
+table th {
+	background-color: #E8DFF2;
+}
+
+table tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+.pagination {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.pagination a {
+	margin: 0 5px;
+	text-decoration: none;
+	color: #4A47A3;
+	font-weight: bold;
+}
+
+
+/*자주하는 질문*/
+
+.faq-container {
+	max-width: 600px;
+	margin: 50px auto;
+}
+
+.faq-title {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.faq-item {
+	border-bottom: 1px solid #ccc;
+	padding: 15px 20px;
+	cursor: pointer;
+}
+
+.faq-item:last-child {
+	border-bottom: none;
+}
+
+.faq-question {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1em;
+}
+
+.faq-answer {
+	display: none;
+	margin-top: 10px;
+	font-size: 0.9em;
+	color: #555;
+}
+
+.faq-toggle {
+	transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+	transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+	display: block;
+}

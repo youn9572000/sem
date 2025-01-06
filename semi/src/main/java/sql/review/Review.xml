@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<!-- 리뷰 목록 조회 -->
+	<entry key="selectReviewList">
+		SELECT REVIEW_NO,
+		REVIEW_WRITER,
+		PRODUCT_NO,
+		REVIEW_CONTENT,
+		CAST(REVIEW_DATE AS TIMESTAMP) AS REVIEW_DATE, -- 명시적으로 TIMESTAMP로 변환
+		REVIEW_SCORE,
+		REVIEW_DEC
+		FROM REVIEW
+		WHERE PRODUCT_NO = ?
+	</entry>
+
+	<!-- 리뷰 추가 -->
+	<entry key="insertReview">
+		INSERT INTO REVIEW (REVIEW_NO,REVIEW_WRITER,
+		PRODUCT_NO,
+		REVIEW_CONTENT, REVIEW_SCORE,REVIEW_DATE,REVIEW_DEC)
+		VALUES (SEQ_NNO.NEXTVAL,?, ?, ?, ?,SYSDATE,DEFAULT)
+	</entry>
+
+	<!-- 리뷰 삭제 -->
+	<entry key="deleteReviewByWriter">
+		DELETE FROM REVIEW
+		WHERE REVIEW_NO = ?
+	</entry>
+
+	<!-- 리뷰 수정 -->
+	<entry key="updateReview">
+		UPDATE REVIEW
+		SET
+		REVIEW_CONTENT = ?,
+		REVIEW_SCORE = ?
+		WHERE REVIEW_NO = ?
+	</entry>
+	<entry key="selectOneReview">
+		SELECT * FROM REVIEW WHERE REVIEW_NO = ?
+	</entry>
+
+	<entry key='selectReivewListNo'>
+		SELECT SEQ_NNO.CURRVAL FROM DUAL
+	</entry>
+
+	<entry key="selectReviewListByProductNo">
+		SELECT REVIEW_NO, REVIEW_WRITER, PRODUCT_NO,
+		REVIEW_CONTENT, REVIEW_DATE,
+		REVIEW_SCORE
+		FROM REVIEWS
+		WHERE PRODUCT_NO =
+		?
+		ORDER BY REVIEW_DATE DESC
+	</entry>
+	<entry key="updateReviewStatus">
+		UPDATE REVIEW
+		SET REVIEW_DEC = ?
+		WHERE REVIEW_NO = ?
+	</entry>
+
+	<entry key="selectReviewStatus">
+		SELECT REVIEW_DEC
+		FROM REVIEW
+		WHERE REVIEW_NO = ?
+	</entry>
+	<entry key="selectReportCountByReviewAndUser">
+		SELECT COUNT(*)
+		FROM REPORT_TABLE
+		WHERE REVIEW_NO = ?
+		AND USER_ID = ?
+	</entry>
+</properties>
+

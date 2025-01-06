@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="login">
+		SELECT *
+		FROM MEMBER
+		WHERE USER_ID = ?
+		AND USER_PWD = ?
+	</entry>
+
+	<entry key="update">
+		UPDATE MEMBER SET
+		EMAIL=?
+		WHERE USER_NO=?
+	</entry>
+
+	<entry key="updatePwd">
+		UPDATE MEMBER
+		SET USER_PWD = ?
+		WHERE USER_NO = ? AND USER_PWD=?
+	</entry>
+
+	<entry key="delete">
+		DELETE MEMBER
+		WHERE USER_NO =? AND USER_PWD=?
+	</entry>
+
+	 <entry key="findId">
+        <![CDATA[
+            SELECT USER_ID
+            FROM MEMBER
+            WHERE EMAIL = ?
+        ]]>
+    </entry>
+     <entry key="insert">
+    	INSERT INTO MEMBER VALUES
+		(MEMBER_SEQ.NEXTVAL, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT, DEFAULT, NULL)
+    </entry>
+    
+    <entry key="idCheck">
+    	SELECT COUNT(*) COUNT
+	 	FROM MEMBER
+	 	WHERE USER_ID = ?
+    </entry>
+</properties>

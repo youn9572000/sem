@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+	<entry key="selectInquiryCount">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE BOARD_CATEGORY = 4
+	</entry>
+	
+	<entry key="selectInquriy">
+		SELECT *
+		FROM (
+		SELECT ROWNUM AS RNUM, A.*
+		FROM (
+		SELECT
+		B.BOARD_NO, M.USER_ID AS BOARD_WRITER, B.BOARD_TITLE,
+		B.COUNT,
+		B.CREATE_DATE, B.BOARD_CATEGORY, B.PLUS
+		FROM BOARD B
+		JOIN MEMBER M ON
+		B.BOARD_WRITER = M.USER_NO
+		WHERE B.BOARD_STATUS = 'Y'
+		AND
+		B.BOARD_CATEGORY = 4
+		ORDER BY B.BOARD_NO DESC
+		) A
+		)
+		WHERE RNUM BETWEEN ?
+		AND ?
+	</entry>
+	
+	
+	<entry key="selectInquiryBoard">
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT,
+		USER_ID,
+		CREATE_DATE
+		FROM BOARD B
+		JOIN MEMBER ON BOARD_WRITER = USER_NO
+		WHERE BOARD_NO = ?
+		AND
+		B.BOARD_STATUS ='Y'
+	</entry>
+	
+	<entry key="selectCategory">
+		SELECT BOARD_CATEGORY, CATEGORY_NAME			   
+		FROM CATEGORY	
+	</entry>
+	
+	<entry key="insertBoard">
+		INSERT INTO BOARD
+		VALUES(SEQ_BNO.NEXTVAL, ?, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT)	
+	</entry>
+	
+	<entry key="inquiryDelete">
+		DELETE FROM BOARD WHERE BOARD_NO = ?	
+	</entry>
+	
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+
+</properties>

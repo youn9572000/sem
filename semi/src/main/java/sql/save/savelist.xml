@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd" >
+<properties>
+	<entry key="selectSaveList">
+		SELECT
+		SL.SAVELIST_NO,
+		SL.USER_ID,
+		SL.PRODUCT_NO,
+		SL.PRODUCT_NAME,
+		P.IMAGE_URL AS PRODUCT_IMAGE
+		FROM
+		SAVELIST SL
+		JOIN
+		PRODUCT P
+		ON
+		SL.PRODUCT_NO = P.PRODUCT_NO
+		WHERE
+		SL.USER_ID = ?
+	</entry>
+
+	<entry key="insertSaveList">
+		INSERT INTO savelist (SAVELIST_NO,USER_ID, PRODUCT_NO,
+		PRODUCT_NAME)
+		VALUES (SAVELIST_SEQ.NEXTVAL,?, ?, ?)
+	</entry>
+
+	<!-- 찜 목록 삭제 쿼리 -->
+	<entry key="deleteSaveList">
+		DELETE FROM savelist
+		WHERE USER_ID = ?
+		AND PRODUCT_NO =?
+	</entry>
+	  <entry key="deleteAllSaveList">
+        DELETE FROM savelist
+        WHERE USER_ID = ?
+    </entry>
+
+	<entry key='selectinsertSaveList'>
+		SELECT SAVELIST_SEQ.CURRVAL FROM DUAL
+	</entry>
+	<entry key="isDuplicateSave">
+		SELECT COUNT(*)
+		FROM savelist
+		WHERE USER_ID = ?
+		AND PRODUCT_NO = ?
+	</entry>
+
+</properties>

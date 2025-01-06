@@ -1,0 +1,167 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-container .logo img {
+    height: 50px;
+}
+.header-container h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin: 0;
+}
+
+.mypage-nav ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	gap: 10px;
+	background-color: #f9f9f9;
+	border-bottom: 2px solid #D0C1E3;
+}
+
+.mypage-nav ul li {
+	flex: 1;
+}
+
+.mypage-nav ul li a {
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	text-decoration: none;
+	color: #333;
+}
+
+.mypage-nav ul li a.active, .mypage-nav ul li a:hover {
+	background-color:#563d9e;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 4px;
+}
+
+.mypage-content {
+	margin-top: 20px;
+	padding: 20px;
+	background: #fdfdff;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mypage-content h3 {
+	font-size: 1.5em;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+.mypage-content form table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.mypage-content form table th, .mypage-content form table td {
+	padding: 12px;
+	border-bottom: 1px solid #eee;
+}
+
+.mypage-content form table th {
+	text-align: left;
+	font-weight: bold;
+	color: #555;
+}
+
+.mypage-content form table td .email-group {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.mypage-content form table td .email-group input {
+	flex: 1;
+}
+
+.mypage-content form table td input, .mypage-content form table td select
+	{
+	width: 100%;
+	padding: 8px;
+	margin-top: 4px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.mypage-content .form-buttons {
+	margin-top: 20px;
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+
+.mypage-content .form-buttons button {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.mypage-content .form-buttons button[type='submit'] {
+	background-color: #D0C1E3;
+	color: white;
+}
+
+.mypage-content .form-buttons button[type='button'] {
+	background-color: #4A47A3;
+	color: white;
+}
+
+.mypage-content .form-buttons button:hover {
+	opacity: 0.9;
+}
+
+
+/*등록한 게시글*/
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.board-table th, .board-table td {
+    border: 1px solid #e1e1e1;
+    padding: 10px;
+    text-align: center;
+}
+
+.board-table th {
+    background-color: #D0C1E3;
+    font-weight: bold;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.filter-dropdown {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.filter-dropdown label {
+    margin-right: 10px;
+}
+
+
+
+
+

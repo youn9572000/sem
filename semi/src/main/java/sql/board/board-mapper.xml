@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+	
+	<entry key="selectNotice">
+		SELECT *
+		FROM (
+		SELECT ROWNUM AS RNUM, A.*
+		FROM (
+		SELECT
+		B.BOARD_NO, M.USER_ID AS BOARD_WRITER, B.BOARD_TITLE,
+		B.COUNT,
+		B.CREATE_DATE, B.BOARD_CATEGORY, B.PLUS
+		FROM BOARD B
+		JOIN MEMBER M ON
+		B.BOARD_WRITER = M.USER_NO
+		WHERE B.BOARD_STATUS = 'Y'
+		AND
+		B.BOARD_CATEGORY = 3
+		ORDER BY B.BOARD_NO DESC
+		) A
+		)
+		WHERE RNUM BETWEEN ?
+		AND ?
+
+	</entry>
+
+	<entry key="selectNoticeCount">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE BOARD_CATEGORY = 3
+	</entry>
+
+	<entry key="selectFreeCount">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE BOARD_CATEGORY = 1
+	</entry>
+
+
+	<entry key="selectFree">
+		SELECT *
+		FROM (
+		SELECT ROWNUM AS RNUM, A.*
+		FROM (
+		SELECT
+		B.BOARD_NO, M.USER_ID AS BOARD_WRITER, B.BOARD_TITLE,
+		B.COUNT,
+		B.CREATE_DATE, B.BOARD_CATEGORY, B.PLUS
+		FROM BOARD B
+		JOIN MEMBER M ON
+		B.BOARD_WRITER = M.USER_NO
+		WHERE B.BOARD_STATUS = 'Y'
+		AND
+		B.BOARD_CATEGORY = 1
+		ORDER BY B.BOARD_NO DESC
+		) A
+		)
+		WHERE RNUM BETWEEN ?
+		AND ?
+	</entry>
+
+	<entry key="selectEvent">
+		SELECT *
+		FROM (
+		SELECT ROWNUM AS RNUM, A.*
+		FROM (
+		SELECT
+		B.BOARD_NO, M.USER_ID
+		AS BOARD_WRITER, B.BOARD_TITLE,
+		B.COUNT,
+		B.CREATE_DATE,
+		B.BOARD_CATEGORY, B.PLUS
+		FROM BOARD B
+		JOIN MEMBER M ON
+		B.BOARD_WRITER =
+		M.USER_NO
+		WHERE B.BOARD_STATUS = 'Y'
+		AND
+		B.BOARD_CATEGORY = 2
+		ORDER BY
+		B.BOARD_NO DESC
+		) A
+		)
+		WHERE RNUM BETWEEN ?
+		AND ?
+
+	</entry>
+
+	<entry key="selectEventCount">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE BOARD_CATEGORY = 2
+	</entry>
+
+	<entry key="selectBoard">
+
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT,
+		USER_ID,
+		CREATE_DATE, FILE_NO, ORIGINNAME_NAME,
+		CHANGE_NAME, FILE_PATH
+		FROM BOARD
+		B
+		JOIN MEMBER ON BOARD_WRITER = USER_NO
+		LEFT JOIN ATTACHMENT A ON
+		(BOARD_NO = REF_BNO AND A.ATTACHMENT_STATUS
+		='Y')
+		WHERE BOARD_NO = ?
+		AND
+		B.BOARD_STATUS ='Y'
+
+	</entry>
+
+
+	<entry key="selectAttachment">
+
+		SELECT CHANGE_NAME, FILE_PATH, ORIGINNAME_NAME,
+		FILE_NO
+		FROM ATTACHMENT
+		WHERE REF_BNO = ?
+		AND ATTACHMENT_STATUS = 'Y'
+
+	</entry>
+
+	<entry key="selectCategory">
+		SELECT BOARD_CATEGORY, CATEGORY_NAME			   
+		FROM CATEGORY
+	</entry>
+	
+	
+	<entry key="insertBoard">
+		INSERT INTO BOARD
+		VALUES(SEQ_BNO.NEXTVAL, ?, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT)
+	</entry>
+	
+	<entry key="insertAttachment">
+		INSERT INTO ATTACHMENT
+		VALUES(SEQ_FNO.NEXTVAL, SEQ_BNO.CURRVAL, ?, ?, ?, DEFAULT, '', DEFAULT)
+	</entry>
+	
+	<!-- 댓글 기능 쿼리문 -->
+	
+	
+	<entry key="insertReply">
+		INSERT INTO REPLY 
+        VALUES (SEQ_RNO.NEXTVAL, ?, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT)
+	</entry>
+	
+	
+	
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+
+</properties>

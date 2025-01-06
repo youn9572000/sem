@@ -1,0 +1,132 @@
+body {
+  background-color: #ffffff;
+  margin: 0;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main-layout {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  position: relative;
+}
+
+#app {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 75%;
+  margin-top: 100px;
+  margin-bottom:100px;
+}
+
+#app .tab{background-color:#f0f0f0; color:black; font-weight:500;}
+.tab-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-bar .tab {
+  background-color: none;
+  color: white; /* 흰색 글자 */
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.tab-bar .tab.clicked {
+  background-color: #fae100 !important; /* 선택된 탭 더 진한 보라색 */
+}
+
+.tab-bar .tab:hover {
+  background-color: #fae100; /* Hover 시 진한 보라색 */
+  color: white;
+}
+
+.banner-category {
+  display: none; /* 기본적으로 숨김 */
+  text-align: center; /* 버튼 가운데 정렬 */
+  margin: 20px 0;
+}
+
+.banner-category.active {
+  display: flex; /* 활성화된 배너만 표시 */
+  justify-content: center; /* 버튼을 가로로 가운데 정렬 */
+  gap: 20px; /* 버튼 간격 */
+  flex-wrap: wrap; /* 버튼이 여러 줄로 배치될 경우 */
+}
+
+.banner-button,
+.banner-button1 {
+  background-color: #7e19a0; /* 버튼 배경 밝은 보라색 */
+  color: white; /* 글자색 흰색 */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 10px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.banner-button:hover,
+.banner-button1:hover {
+  background-color: #fae100; /* Hover 시 진한 보라색 */
+}
+
+#searchForm {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 300px;
+  height: 150px;
+  margin: 20px auto;
+}
+
+.container img{width:200px; height:auto; margin-left:550px; margin-top:30px;}
+
+#searchText {
+  flex: 1;
+  color: #333; /* 입력 텍스트 색상 */
+  font-weight: none;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  height: 38px;
+  padding: 0 10px;
+}
+
+#searchText::placeholder{font-weight:normal; font-size:15px;}
+
+#searchButton {width:100px; height:40px; border:none; margin:20px auto; font-size:15px; background-color:grey;
+font-weight:600; text-align:center; line-height:30px; box-sizing:border-box; display:block;}
+
+#searchButton:hover {
+  background-color:#fae100; 
+}
+
+#image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#image-container img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

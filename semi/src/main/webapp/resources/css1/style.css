@@ -1,0 +1,363 @@
+/*편리하조 메인 css*/
+
+    #header_wrap {width:100%; height:111px;
+    padding-top: 28px; box-sizing: border-box; background:#ffffff;}
+    #header_wrap #header {width:1140px; height:55px;
+    margin: auto;}
+    /*자식요소에 float 속성이 있으면 부모요소에 overflow:hidden 추가*/
+    
+    #header .logo {width:190px; float:left;}
+    #header .gnb {display:none; width:850px; float:right; display: flex; justify-content: space-between;}
+    #header .gnb li {}
+    #header .gnb li a {line-height:55px; font-size:18px; font-weight:800; color: black;}
+    #header .gnb li a:hover {color:#6666ff;}
+    
+    #header .menu-toggle-btn {display:none !important; float:right; width:30px; margin-top:10px; cursor:pointer;}
+	#header .menu-toggle-btn span {display:block; width:100%; height:3px; background:#333; margin-bottom:7px; border-radius:2px;}
+	#header .menu-toggle-btn span:nth-child(2) {margin:7px 0;}
+
+    .user-menu{
+        position: absolute; 
+        top: 28px;
+        right: 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px; /* 글자 간격 gap 으로 조정해 주기 */
+    }
+
+    .user-menu .icon{
+        font-size: 12px;
+        font-weight: 400;
+        text-align: center;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .user-menu .icon:after {
+        display:block;
+        content: "";
+        position:absolute;
+        right:-8px;
+        top:10%;
+        width:1px;
+        height:12.8px;
+        background:#a09999;
+    }
+
+    .user-menu .icon:last-child:after{
+        content: none;
+    }
+
+    /* Login, Signup, Mypage Section 끝 */
+
+    #visual {width:100%; background:#999;}
+    #visual img {width:100%;} /*이미지크기를 부모요소에 딱 맞춤*/
+    
+    /*부모박스는 자식박스의 크기만큼 늘어나게 크기속성을 안 넣어준다.*/
+    
+    #container {}
+    #container #brand {width:100%; height:853px;
+    padding-top:100px; box-sizing:border-box;}
+    
+    #brand .title {text-align:center;}
+    #brand .title h1 {font-size:50px; color:#323232; font-weight:700;
+    line-height: 1.5;}
+    #brand .title p {font-size:20px; font-weight:500;line-height: 1.3;}
+    
+    #brand .category {width: 1140px; margin:40px auto; display:flex; justify-content: space-around;}
+    #brand .category li {width:12%;}
+    #brand .category li a {display:block; width:100%; height:46px; background:#fff; 
+    border:1px solid #333; border-radius:23px; text-align:center; line-height:46px;
+    font-size:19px; font-weight:600; color:#5b5b5b; box-sizing: border-box;}
+    #brand .category li a:hover {background:#aba2ff; color:#fff;}
+    
+    #brand .product {}
+    #brand .product .product_list {width:1000px; margin:80px auto 60px; display: flex; justify-content:space-between;}
+    #brand .product .product_list li {}
+    #brand .product .product_list li img {}
+    #brand .product .product_list li p {text-align:center; line-height:2; font-size:14px; color:#555; font-weight:500;}
+    
+    #brand .product .more {width:160px; height:50px; border:1px solid #66f; margin: 20px auto; font-size:25px; color:#ffffff; font-weight: 600;
+    text-align: center; line-height: 50px; box-sizing: border-box; background-color:#66f;
+    }
+
+    /*모달*/
+
+    a {text-decoration: none !important;}
+    button.btn.btn-secondary{width: 100px; border:none;}
+    button.btn.btn-primary{width: 150px; background-color: #6c757d; border:none;}
+
+    /*모달 끝*/
+    
+    #container {
+        width:100%;
+        min-width:1140px;
+        margin:0 auto;
+        overflow:hidden;
+    }
+    
+    #video {
+        width:100%;
+        height:850px;
+        background:#66f;
+        position:relative;
+    }
+    
+    #video iframe, #video video {
+        position:absolute;
+        top:0; 
+        left:0;
+        width:100%;
+        height:100%;
+        border:0;
+    }
+    
+    #container #community {width:100%; height:1244px; background:#fff;
+    padding-top:100px; box-sizing:border-box;}
+    
+    #community .title {text-align:center;}
+    #community .title h1 {font-size:50px; color:#323232; font-weight:700;
+    line-height: 1.5; margin-bottom: 10px;}
+    #community .title p {font-size:20px; font-weight:600;line-height: 1.3;}
+    
+    /*#community .sns {margin:68px 0 54px; display:flex; justify-content:center; align-items:center; overflow:hidden;}
+    #community .sns li {margin:0 8px;}*/
+    
+    #community .commu {width:1140px; margin:0 auto; overflow:hidden;}
+    
+    #community .commu .block1 {width:313px; height:660px; border: 1px solid #333;
+    float:left; box-sizing:border-box;}
+    
+    #community .commu .block2 {width:474px; height:660px; border: 0 solid #333;
+    float:left; box-sizing:border-box; margin-left:20px; margin-right:20px;}
+    
+    .block2 .block_video {width:100%; height:430px; 
+        border: 1px solid #333; box-sizing:border-box; margin-bottom:20px;
+    padding:25px 40px;}
+    .block2 .block_story {width:100%; height:210px; 
+        border: 1px solid #333; box-sizing:border-box;
+    padding:25px 40px;}
+    
+    
+    #community .commu .block3 {width:313px; height:660px; border: 0 solid #333;
+    float:left; box-sizing:border-box;}
+    
+    .block3 .block_recipe {width:100%; height:214px; border: 1px solid #333; 
+        box-sizing:border-box; padding:25px 35px; margin-bottom:20px;}
+    .block3 .block_notice {width:100%; height:193px; border: 1px solid #333; 
+        box-sizing:border-box; padding:25px 35px; margin-bottom:20px;}
+    .block3 .block_shop {width:100%; height:210px; border: 1px solid #333; 
+        box-sizing:border-box; padding:25px 35px;}
+    
+    /*2,3단 디자인 공통*/
+    
+    .commu .block_title {font-size:27px; line-height:1.4; font-weight:600; color:#555;}
+    .commu .block_text {font-size:17px; line-height:1.2; font-weight:600; color:#666; margin-top:10px; margin-bottom:30px;}
+    .commu .block_btn {display:block; width:100px; line-height:27px; background:#5e4cff;
+    color:#fff; font-weight:600; font-size:14px; text-align:center; border-radius:14px;}
+    
+    
+    /*커뮤니티 박스에 마우스를 올리면 배경색과 문자색 바꾸기*/
+    
+    #community .commu .block2 div:hover {background:#0085ca; border:0;
+        cursor:pointer; transition: all 0.4s;}
+    #community .commu .block3 div:hover {background:#0085ca; border:0;}
+    
+    .commu .block2 div:hover .block_title {color:#fff;}
+    .commu .block2 div:hover .block_text {color:#fff;}
+    .commu .block2 div:hover .block_btn {background:#fff; color:#aba2ff;}
+    
+    .commu .block3 div:hover .block_title {color:#fff;}
+    .commu .block3 div:hover .block_text {color:#fff;}
+    .commu .block3 div:hover .block_btn {background:#fff; color:#aba2ff;}
+    
+    /*링크태그는 크기속성이 기본적으로 적용이 안됨.
+    링크태그에 크기속성을 적용하려면 display:block을 추가해야함*/
+    
+    /*박스에 마우스 호버했을 때*/
+    
+    
+    
+    #footer_wrap {width:100%; height:205px; background:#ffffff;
+    border-top:1px solid #e4e4e4; box-sizing:border-box;
+    padding-top:35px;} 
+    #footer_wrap #footer {width:1140px; height:140px;
+    margin: auto; display:flex;}
+    
+    #footer .f_logo {width:186px; height:47px; margin-right:35px;}
+    #footer .f_logo img {width:100%;} /*부모박스에 꽉차게 크기 맞춤*/
+    
+    #footer .f_copyright {width:448px; height:133px; margin-right:20px;}
+    #footer .f_copyright .menu {display:flex; justify-content:space-between; margin-bottom:24px;}
+    #footer .f_copyright .menu li {position:relative;}
+    #footer .f_copyright .menu li a {font-size:14px; color:#000000; font-weight:500;}
+    
+    /*가상엘리먼트로 메뉴 사이 바 만들기*/
+    #footer .f_copyright .menu li:after {
+        display:block;
+        content: "";
+        position:absolute;
+        right:-10px;
+        top:3px;
+        width:1px;
+        height:10px;
+        background:#ffffff;
+    }
+    
+    #footer .f_copyright .info {font-size:12px; color:#000000; line-height:1.3;}
+    #footer .f_copyright .copyright {font-size:12px; color:#000000; margin-top:10px;}
+    
+    /*#footer .f_sns {width:160px; height:137px; margin-right:28px;}
+    #footer .f_sns .icon {display:flex; justify-content:space-around;}
+    #footer .f_sns .icon li {}*/
+    
+    #footer .f_site {width:242px; height:137px;}
+    #footer .f_site .family {width:242px; height:40px; border:1px solid #c8c8c8;
+    box-sizing: border-box; margin-bottom: 5px; padding-left:15px;}
+
+    /*sub page - company & 공통 부분*/
+
+#sub_visual {
+    width:100%; height:242px;
+    background: url(../img1/bg_sub_title.jpg);
+    background-position: center top;
+    background-size: cover;
+}
+
+#sub_visual h1 {
+    font-size:50px; font-weight:600;
+    color:#ffffff; padding-top:60px;
+    text-align:center;}
+
+#sub_visual p {
+    font-size:20px; font-weight:400;
+    color:#ffffff; margin-top:20px;
+    text-align:center;
+    letter-spacing:-1px;}
+
+#sub_container {width:1140px; margin:0 auto; padding:60px; box-sizing:border-box; padding-bottom:60px;}
+
+#sub_container .sub_title {margin-bottom:30px;}
+
+#sub_container .sub_title h3 {color: #563d9e; font-size:34px; font-weight:500; line-height:40px;}
+
+#sub_container .company_tab {display: flex;}
+#sub_container .company_tab li {width:20%; border:1px solid #ccc; line-height:48px; margin-left:-1px; border-bottom:1px solid #66f; text-align:center;}
+#sub_container .company_tab li a {font-size:18px; font-weight:500; color:#111;}
+
+#sub_container .company_tab li.selected {border-color:#66f; border-bottom:0; z-index:100;}
+
+#sub_container .company_list {margin-top:80px;}
+
+.company_list .company_01 {width:100%; display:flex;}
+
+.company_list .company_01 .text {width:60%; margin-right:2%; height:500px;}
+
+.company_list .company_01 .text h3 {font-size:36px; font-weight:400; line-height:1.2; margin-bottom:25px; letter-spacing:-2px;}
+
+.company_list .company_01 .text p {font-size:16px; font-weight:500; color:#666; line-height:1.2; letter-spacing:-1px;}
+
+.company_list .company_01 .img {width:38%; height:500px;}
+
+/*login*/
+
+form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom:40px;
+
+    /*Flexbox로 수직 정렬*/
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color:#666666;
+    font-size:13px;
+    text-align: left;
+    width:100%;
+}
+
+input{
+    background-color:none;
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size:18px;
+    text-align: center;
+    color: #333;
+}
+
+button{
+    background-color:#fae100;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+    font-size:20px;
+    font-weight:bold; 
+}
+
+button:hover{
+    background-color: #563d9e;
+}
+
+.user-login{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.user-login .icon{
+    position:relative;
+}
+
+.user-login .icon:after {
+    display:block;
+    content: "";
+    position:absolute;
+    right:-8px;
+    top:10%;
+    width:1px;
+    height:15px;
+    background:#a09999;
+}
+
+.user-login .icon:last-child:after{
+    content: none;
+}
+
+/*Mobile CSS*/
+@media all and (max-width: 768px){
+	
+    /*메인페이지 모바일 버전--------------------*/
+
+    /*헤더*/
+    #header {height:35px;}
+    #header .logo {left:10px; top:10px; width:20px; height:10px; margin-bottom:35px;}
+    
+    #header .gnb {display:none; position:absolute; top:60px; left:0; width:100%;}
+    #header .gnb li {float:none; margin-left:0px; border-bottom:1px solid #fff;}
+    #header .gnb li a {display:block; background: rgba(0,0,0,1.0); width:100%; padding:10px 10%; color:#fff; font-size:16px; font-weight: 700;}
+    #header .gnb li a:hover {background:#000000; color:#fff;}
+    
+    #header .menu-toggle-btn{display:block !important;}
+    
+}
+    
